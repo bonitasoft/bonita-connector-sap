@@ -1,6 +1,7 @@
 package org.bonitasoft.connectors.sap;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,6 +28,8 @@ public class SapCallFunction implements Connector {
     public static final String INPUT_PARAMETERS = "inputParameters";
     public static final String OUTPUT_PARAMETERS = "outputParameters";
     public static final String HTML_OUTPUT = "htmlOutput";
+    public static final String OUTPUT_RESULTS = "outputResults";
+
     SAPCallFunctionConnector bos5Connector = new SAPCallFunctionConnector();
 
 
@@ -86,8 +89,10 @@ public class SapCallFunction implements Connector {
 
     @Override
     public Map<String, Object> execute() throws ConnectorException {
+        Map<String, Object> results = new HashMap<String, Object>();
         try {
             bos5Connector.executeConnector();
+            results.put(OUTPUT_RESULTS, bos5Connector.getResults());
         } catch (Exception e) {
             throw new ConnectorException(e);
         }
