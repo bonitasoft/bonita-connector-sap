@@ -2,7 +2,7 @@
 <definition:ConnectorDefinition xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <id>sap-jco2-callfunction</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <icon>sap.png</icon>
 
     <category id="sap" icon="sap.png" />
@@ -23,6 +23,8 @@
     <input name="inputParameters" type="java.util.List" />
     <input name="outputParameters" type="java.util.List" />
     <input name="htmlOutput" type="java.lang.String" />
+
+    <output name="outputResults" type="java.util.List" />
 
     <page id="connection">
         <widget id="serverType" inputName="serverType" xsi:type="definition:Select"  readOnly="false">
