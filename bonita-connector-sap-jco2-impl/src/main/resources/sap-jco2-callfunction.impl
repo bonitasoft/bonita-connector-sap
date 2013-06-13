@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
 
 	<definitionId>sap-jco2-callfunction</definitionId>
 	<definitionVersion>1.0.1</definitionVersion>
