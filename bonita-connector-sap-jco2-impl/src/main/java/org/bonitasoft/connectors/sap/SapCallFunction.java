@@ -1,6 +1,5 @@
 package org.bonitasoft.connectors.sap;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -96,7 +95,7 @@ public class SapCallFunction implements Connector {
         } catch (Exception e) {
             throw new ConnectorException(e);
         }
-        return Collections.emptyMap();
+        return results;
     }
 
     @Override

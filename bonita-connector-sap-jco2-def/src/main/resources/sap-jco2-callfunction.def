@@ -60,11 +60,10 @@
 
     <page id="output">
         <widget id="htmlOutput" inputName="htmlOutput" xsi:type="definition:Text" />
-        <widget id="outputParameters" inputName="outputParameters" xsi:type="definition:Array" cols="4" fixedCols="true">
+        <widget id="outputParameters" inputName="outputParameters" xsi:type="definition:Array" cols="3" fixedCols="true">
             <colsCaption>Type</colsCaption>
             <colsCaption>Table name</colsCaption>
             <colsCaption>XPath</colsCaption>
-            <colsCaption>Variable name</colsCaption>
         </widget>
     </page>
 

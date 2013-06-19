@@ -113,8 +113,7 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
 					} else {
 						list.add(parameterValue);
 					}
-					int rowSize = 0;
-					rowSize = list.size();
+					int rowSize = list.size();
 					Table table = null;
 					if (INPUT_TABLE.equals(parameterType)) {
 						table = inputParameterList.getTable(tableName);
@@ -146,12 +145,11 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
 				final ParameterList outputParameterList = jcoFunction
 						.getExportParameterList();
 				for (List<String> row : outputParameters) {
-					final String parameterType = (String) row.get(0);
-					final String tableName = (String) row.get(1);
-					final String xpath = (String) row.get(2);
-					// final String variableName = row.get(3);
+					final String parameterType = row.get(0);
+					final String tableName = row.get(1);
+					final String xpath = row.get(2);
 
-					Serializable variableValue = null;
+					Serializable variableValue;
 					if (OUTPUT_STRUCTURE.equals(parameterType)) {
 						final Structure structure = outputParameterList
 								.getStructure(tableName);
@@ -203,7 +201,9 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
 		}
 
 		// release client
-		releaseClient(jcoClient);
+        finally {
+            releaseClient(jcoClient);
+        }
 	}
 
 	public List<String> validateValues() {
