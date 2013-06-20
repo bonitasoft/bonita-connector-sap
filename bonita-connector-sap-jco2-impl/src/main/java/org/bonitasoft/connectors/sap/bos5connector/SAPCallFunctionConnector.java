@@ -39,7 +39,7 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
 	public static final String INPUT_STRUCTURE = "input_structure";
 	public static final String INPUT_SINGLE = "input_single";
 
-	private static final int EXPECTED_OUTPUT_COLUMN_NUMBER = 4;
+	private static final int EXPECTED_OUTPUT_COLUMN_NUMBER = 3;
 	private static final List<String> OUTPUT_PARAMETER_TYPES = new ArrayList<String>();
 	public static final String TABLE_OUTPUT = "table_output";
 	public static final String OUTPUT_TABLE = "output_table";
