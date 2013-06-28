@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>bonita-connector-sap</artifactId>
-    <version>6.1.0-rc-01</version>
+    <version>6.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -37,7 +37,7 @@
     </build>
 
     <scm>
-        <developerConnection>scm:svn:https://svn.bonitasoft.org/bonita-connectors-6/tags/connectors/bonita-connector-sap/bonita-connector-sap-6.1.0-rc-01</developerConnection>
+        <developerConnection>scm:svn:https://svn.bonitasoft.org/bonita-connectors-6/trunk/connectors/bonita-connector-sap/</developerConnection>
     </scm>
 
 
