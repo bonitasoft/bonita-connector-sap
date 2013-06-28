@@ -4,8 +4,9 @@
     <id>sap-jco2-callfunction</id>
     <version>1.0.1</version>
     <icon>sap.png</icon>
-
-    <category id="sap" icon="sap.png" />
+  
+    <category id="erp" icon="erp-icon.jpg" />
+    <category id="sap" icon="sap.png" parentCategoryId="erp" />
 
     <input name="serverType" type="java.lang.String" mandatory="true" />
     <input name="client" type="java.lang.String" mandatory="true" />
