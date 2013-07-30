@@ -6,7 +6,7 @@
     <icon>sap.png</icon>
   
     <category id="erp" icon="ERP.png" />
-    <category id="sap" icon="sap.png" parentCategoryId="erp" />
+    <category id="sap" icon="sap.png" parentCategoryId="erp.png" />
 
     <input name="serverType" type="java.lang.String" mandatory="true" />
     <input name="client" type="java.lang.String" mandatory="true" />
