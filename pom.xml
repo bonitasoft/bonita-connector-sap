@@ -4,11 +4,10 @@
     <parent>
         <artifactId>bonita-connectors</artifactId>
         <groupId>org.bonitasoft.connectors</groupId>
-        <version>6.1.0-rc-01</version>
+        <version>6.1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>bonita-connector-sap</artifactId>
-    <version>6.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -28,17 +27,17 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <tagBase>https://svn.bonitasoft.org/bonita-connectors-6/tags/connectors/bonita-connector-sap/</tagBase>
-                    <preparationGoals>clean install</preparationGoals>
-                    <goals>deploy</goals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <scm>
-        <developerConnection>scm:svn:https://svn.bonitasoft.org/bonita-connectors-6/trunk/connectors/bonita-connector-sap/</developerConnection>
+        <developerConnection>scm:git:git@github.com:bonitasoft/bonita-connector-sap.git</developerConnection>
+        <connection>scm:git:git@github.com:bonitasoft/bonita-connector-sap.git</connection>
+        <url>https://github.com/bonitasoft/bonita-connector-sap</url>
+        <tag>HEAD</tag>
     </scm>
-
 
 </project>
