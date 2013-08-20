@@ -33,6 +33,7 @@
         </plugins>
     </build>
 
+
     <scm>
         <developerConnection>scm:git:git@github.com:bonitasoft/bonita-connector-sap.git</developerConnection>
         <connection>scm:git:git@github.com:bonitasoft/bonita-connector-sap.git</connection>
