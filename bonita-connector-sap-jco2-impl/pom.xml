@@ -45,7 +45,7 @@
                     <properties>
                         <property>
                             <name>listener</name>
-                            <value>org.bonitasoft.engine.jasper.annotation.CustomListener</value>
+                            <value>org.bonitasoft.engine.test.annotation.CustomListener</value>
                         </property>
                     </properties>
                     <excludes>
@@ -55,12 +55,6 @@
             </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.bonitasoft.connectors</groupId>
-                        <artifactId>bonita-connectors-assembly</artifactId>
-                    </dependency>
-                </dependencies>
                 <executions>
                     <execution>
                         <id>assemble</id>
