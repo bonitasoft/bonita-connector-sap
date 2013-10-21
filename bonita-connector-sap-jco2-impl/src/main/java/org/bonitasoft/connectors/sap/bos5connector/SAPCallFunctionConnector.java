@@ -20,6 +20,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bonitasoft.engine.connector.ConnectorException;
+
 import com.sap.mw.jco.JCO.Client;
 import com.sap.mw.jco.JCO.Function;
 import com.sap.mw.jco.JCO.ParameterList;
@@ -100,10 +102,19 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
 				final Object parameterValue = column.get(3);
 
 				if (INPUT_STRUCTURE.equals(parameterType)) {
+					if(inputParameterList == null){
+						throw new ConnectorException("input_structure is not a supported input type for parameter '"+parameterName+"' of table '"+tableName+"'");
+					}
 					final Structure structure = inputParameterList
 							.getStructure(tableName);
+					if(structure == null){
+						throw new ConnectorException("input_structure is not a supported input type for parameter '"+parameterName+"' of table '"+tableName+"'");
+					}
 					structure.setValue(parameterValue, parameterName);
 				} else if (INPUT_SINGLE.equals(parameterType)) {
+					if(inputParameterList == null){
+                		throw new ConnectorException("input_single is not a supported input type for parameter '"+parameterName+"' of table '"+tableName+"'");
+                	}
 					inputParameterList.setValue(parameterValue, parameterName);
 				} else {
 					// INPUT_TABLE or TABLE_INPUT
@@ -116,9 +127,14 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
 					int rowSize = list.size();
 					Table table = null;
 					if (INPUT_TABLE.equals(parameterType)) {
+						if(inputParameterList == null){
+                    		throw new ConnectorException("input_table is not a supported input type for parameter '"+parameterName+"' of table '"+tableName+"'");
+                    	}
 						table = inputParameterList.getTable(tableName);
 					} else if (TABLE_INPUT.equals(parameterType)) {
-
+						if(tableParameterList == null){
+                    		throw new ConnectorException("table_input is not a supported input type for parameter '"+parameterName+"' of table '"+tableName+"'");
+                    	}
 						table = tableParameterList.getTable(tableName);
 					}
 
@@ -201,9 +217,9 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
 		}
 
 		// release client
-        finally {
-            releaseClient(jcoClient);
-        }
+		finally {
+			releaseClient(jcoClient);
+		}
 	}
 
 	public List<String> validateValues() {
@@ -215,12 +231,12 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
 			int inputRowNb = 1;
 			for (List<Object> row : inputParameters) {
 				if (row.size() != EXPECTED_INPUT_COLUMN_NUMBER) {
-                    errors.add(
-                    "Row number: " + inputRowNb + " has a wrong number of columns: " + row.size() + " (instead of " + EXPECTED_INPUT_COLUMN_NUMBER + ").");
+					errors.add(
+							"Row number: " + inputRowNb + " has a wrong number of columns: " + row.size() + " (instead of " + EXPECTED_INPUT_COLUMN_NUMBER + ").");
 				}
 				if (!INPUT_PARAMETER_TYPES.contains(row.get(0))) {
 					errors.add(
-                    "Row number: " + inputRowNb + " has a wrong value for parameterType: " + row.get(0) + " (instead of " + INPUT_PARAMETER_TYPES + ").");
+							"Row number: " + inputRowNb + " has a wrong value for parameterType: " + row.get(0) + " (instead of " + INPUT_PARAMETER_TYPES + ").");
 				}
 				inputRowNb++;
 			}
@@ -231,12 +247,12 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
 			for (List<String> row : outputParameters) {
 				if (row.size() != EXPECTED_OUTPUT_COLUMN_NUMBER) {
 					errors.add(
-                            "Row number: " + outputRowNb + " has a wrong number of columns: " + row.size() + " (instead of " + EXPECTED_OUTPUT_COLUMN_NUMBER + ").");
+							"Row number: " + outputRowNb + " has a wrong number of columns: " + row.size() + " (instead of " + EXPECTED_OUTPUT_COLUMN_NUMBER + ").");
 
 				}
 				if (!OUTPUT_PARAMETER_TYPES.contains(row.get(0))) {
 					errors.add(
-                            "Row number: " + outputRowNb + " has a wrong value for parameterType: " + row.get(0) + " (instead of " + OUTPUT_PARAMETER_TYPES + ").");
+							"Row number: " + outputRowNb + " has a wrong value for parameterType: " + row.get(0) + " (instead of " + OUTPUT_PARAMETER_TYPES + ").");
 				}
 				outputRowNb++;
 			}
