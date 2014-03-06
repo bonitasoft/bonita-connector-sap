@@ -10,7 +10,6 @@ import org.junit.Test;
 public class BAPI_COMPANYCODE_GETLIST {
     private static boolean commitOnSuccess = true;
     private static final boolean rollbackOnFailure = true;
-    private static final boolean printHtml = false;
 
     @Test
     public void callFunction() throws Exception {

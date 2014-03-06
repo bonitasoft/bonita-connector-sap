@@ -101,7 +101,7 @@ public class SAPUtil {
         parameters.put(SapCallFunction.USER, "TALEND");
         parameters.put(SapCallFunction.PASSWORD, "FRANCE");
         parameters.put(SapCallFunction.LANGUAGE, "EN");
-        parameters.put(SapCallFunction.HOST, "192.168.20.141");
+        parameters.put(SapCallFunction.HOST, "192.168.0.58");
         parameters.put(SapCallFunction.SYSTEM_NUMBER, "00");
         parameters.putAll(additionalParameters);
         connector.setInputParameters(parameters);
