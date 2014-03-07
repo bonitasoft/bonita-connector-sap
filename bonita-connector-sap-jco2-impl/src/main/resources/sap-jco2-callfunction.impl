@@ -6,7 +6,7 @@
     <description>Implementation based on javax.mail 1.4.5</description>
 	<implementationClassname>org.bonitasoft.connectors.sap.SapCallFunction</implementationClassname>
 	<implementationId>sap-jco2-callfunction</implementationId>
-	<implementationVersion>1.0.2</implementationVersion>
+	<implementationVersion>$implementation.version$</implementationVersion>
 
 $Dependencies$
 
