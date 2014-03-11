@@ -11,14 +11,14 @@
 	<version>1.0.2</version>
 	
     <properties>
-        <implementation.id>sap-jco2-callfunction</implementation.id>
+        <definition.version>1.0.1</definition.version>
     </properties>
 
     <dependencies>
         <dependency>
             <artifactId>bonita-connector-sap-jco2-def</artifactId>
             <groupId>org.bonitasoft.connectors</groupId>
-            <version>1.0.1</version>
+            <version>${definition.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -42,7 +42,7 @@
 	
     <repositories>
         <repository>
-            <id>Local test repository</id>
+            <id>project.local.repository</id>
             <url>file://${project.basedir}/lib</url>
         </repository>
     </repositories>
