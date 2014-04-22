@@ -254,7 +254,7 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
                             "Row number: " + inputRowNb + " has a wrong number of columns: " + row.size() + " (instead of " + EXPECTED_INPUT_COLUMN_NUMBER
                                     + ").");
                 }
-                if (row.size() > 0 && !INPUT_PARAMETER_TYPES.contains(row.get(0))) {
+                if (!row.isEmpty() && !INPUT_PARAMETER_TYPES.contains(row.get(0))) {
                     errors.add(
                             "Row number: " + inputRowNb + " has a wrong value for parameterType: " + row.get(0) + " (instead of " + INPUT_PARAMETER_TYPES
                                     + ").");
@@ -272,7 +272,7 @@ public class SAPCallFunctionConnector extends SAPAbstractConnector {
                                     + ").");
 
                 }
-                if (row.size() > 0 && !OUTPUT_PARAMETER_TYPES.contains(row.get(0))) {
+                if (!row.isEmpty() && !OUTPUT_PARAMETER_TYPES.contains(row.get(0))) {
                     errors.add(
                             "Row number: " + outputRowNb + " has a wrong value for parameterType: " + row.get(0) + " (instead of " + OUTPUT_PARAMETER_TYPES
                                     + ").");
