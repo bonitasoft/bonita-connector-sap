@@ -2,7 +2,7 @@
 <implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
 
 	<definitionId>sap-jco2-callfunction</definitionId>
-	<definitionVersion>$definition.version$</definitionVersion>
+	<definitionVersion>1.0.1</definitionVersion>
     <description>Implementation based on javax.mail 1.4.5</description>
 	<implementationClassname>org.bonitasoft.connectors.sap.SapCallFunction</implementationClassname>
 	<implementationId>sap-jco2-callfunction</implementationId>
