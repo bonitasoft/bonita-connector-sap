@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definition:ConnectorDefinition xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <id>sap-jco2-callfunction</id>
-    <version>1.0.1</version>
+    <id>${sap-jco3.def.id}</id>
+    <version>${sap-jco3.def.version}</version>
     <icon>sap.png</icon>
   
     <category id="erp" icon="ERP.png" />
@@ -17,7 +17,8 @@
     <input name="systemNumber" type="java.lang.String" />
     <input name="systemId" type="java.lang.String" />
     <input name="groupName" type="java.lang.String" />
-    <input name="repository" type="java.lang.String" />
+    <input name="destinationName" type="java.lang.String" />
+    <input name="destinationData" type="java.util.List" />
     <input name="functionName" type="java.lang.String" mandatory="true" />
     <input name="commitOnSuccess" type="java.lang.Boolean"  mandatory="true" />
     <input name="rollbackOnFailure" type="java.lang.Boolean" mandatory="true" />
@@ -41,10 +42,14 @@
         <widget id="systemNumber" inputName="systemNumber" xsi:type="definition:Text" />
         <widget id="systemId" inputName="systemId" xsi:type="definition:Text" />
         <widget id="groupName" inputName="groupName" xsi:type="definition:Text" />
+        <widget id="destinationName" inputName="destinationName" xsi:type="definition:Text" />
+        <widget id="destinationData" inputName="destinationData" xsi:type="definition:Array" cols="2" fixedCols="true">
+            <colsCaption>Parameter name</colsCaption>
+            <colsCaption>Parameter value</colsCaption>
+        </widget>
     </page>
 
     <page id="functionDefinition">
-        <widget id="repository" inputName="repository" xsi:type="definition:Text" />
         <widget id="functionName" inputName="functionName" xsi:type="definition:Text" />
         <widget id="commitOnSuccess" inputName="commitOnSuccess" xsi:type="definition:Checkbox" />
         <widget id="rollbackOnFailure" inputName="rollbackOnFailure" xsi:type="definition:Checkbox" />
