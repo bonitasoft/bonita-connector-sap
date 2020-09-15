@@ -1,8 +1,0 @@
-*.iml
-.idea
-target
-.project
-.classpath
-.settings
-*.DS_Store
-maven-wrapper.jar
