@@ -1,5 +1,5 @@
 # SAP Connector
-![](https://github.com/bonitasoft/bonita-connector-sap/workflows/Build/badge.svg)
+
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=bonitasoft_bonita-connector-sap&metric=alert_status)](https://sonarcloud.io/dashboard?id=bonitasoft_bonita-connector-sap)
 [![GitHub release](https://img.shields.io/github/v/release/bonitasoft/bonita-connector-sap?color=blue&label=Release)](https://github.com/bonitasoft/bonita-connector-sap/releases)
 [![Maven Central](https://img.shields.io/maven-central/v/org.bonitasoft.connectors/bonita-connector-sap.svg?label=Maven%20Central&color=orange)](https://search.maven.org/search?q=g:%22org.bonitasoft.connectors%22%20AND%20a:%22bonita-connector-sap%22)
@@ -7,14 +7,15 @@
 
 ## Build
 
-__Clone__ or __fork__ this repository, then at the root of the project run:
+__Clone__ or __fork__ this repository
 
-`./mvnw`
+You must be a SAP client and add the [spajco3 jar dependency](https://help.sap.com/saphelp_nwpi711/helpdata/en/48/707c54872c1b5ae10000000a42189c/frameset.htm) in your local maven repository like this:
 
-## Release
+`> ./mvnw install:install-file -Dfile=path/to/sapjco3.jar -DgroupId=com.sap -DartifactId=sapjco -Dversion=3.0.3 -Dpackaging=jar`
 
-In order to create a new release push a `release-<version>` branch with the desired version in pom.xml.
-Update the `master` with the next SNAPSHOT version.
+Then run:
+
+`> ./mvnw`
 
 ## Contributing
 

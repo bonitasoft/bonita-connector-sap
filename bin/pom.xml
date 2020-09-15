@@ -9,17 +9,11 @@
 	<version>1.1.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<properties>
-		<maven.deploy.skip>true</maven.deploy.skip>
-	</properties>
-
+	
+	
 	<modules>
 		<module>sapjco-api</module>
-		<module>bonita-connector-sap</module>
+		<module>bonita-sap-connector</module>
 	</modules>
-
-	<build>
-		<defaultGoal>verify</defaultGoal>
-	</build>
 
 </project>

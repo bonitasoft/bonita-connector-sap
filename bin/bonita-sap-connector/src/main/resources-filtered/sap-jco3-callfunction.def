@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <id>${sap-jco3.def.id}</id>
+    <version>${sap-jco3.def.version}</version>
+    <icon>sap.png</icon>
+  
+    <category id="erp" icon="ERP.png" />
+    <category id="sap" icon="sap.png" parentCategoryId="erp" />
+
+    <input name="serverType" type="java.lang.String" mandatory="true" />
+    <input name="client" type="java.lang.String" mandatory="true" />
+    <input name="user" type="java.lang.String" mandatory="true" />
+    <input name="password" type="java.lang.String" mandatory="true" />
+    <input name="language" type="java.lang.String" defaultValue="EN" mandatory="true" />
+    <input name="host" type="java.lang.String" mandatory="true" />
+    <input name="systemNumber" type="java.lang.String" />
+    <input name="systemId" type="java.lang.String" />
+    <input name="groupName" type="java.lang.String" />
+    <input name="destinationName" type="java.lang.String" />
+    <input name="destinationData" type="java.util.List" />
+    <input name="functionName" type="java.lang.String" mandatory="true" />
+    <input name="commitOnSuccess" type="java.lang.Boolean"  mandatory="true" />
+    <input name="rollbackOnFailure" type="java.lang.Boolean" mandatory="true" />
+    <input name="inputParameters" type="java.util.List" />
+    <input name="outputParameters" type="java.util.List" />
+    <input name="htmlOutput" type="java.lang.String" />
+
+    <output name="outputResults" type="java.util.List" />
+
+    <page id="connection">
+        <widget id="serverType" inputName="serverType" xsi:type="definition:Select"  readOnly="false">
+            <items>ApplicationServer</items>
+            <items>MessageServer</items>
+        </widget>
+        <widget id="client" inputName="client" xsi:type="definition:Text" />
+        <widget id="user" inputName="user" xsi:type="definition:Text" />
+        <widget id="password" inputName="password" xsi:type="definition:Password" />
+        <widget id="language" inputName="language" xsi:type="definition:Text" />
+        <widget id="host" inputName="host" xsi:type="definition:Text" />
+
+        <widget id="systemNumber" inputName="systemNumber" xsi:type="definition:Text" />
+        <widget id="systemId" inputName="systemId" xsi:type="definition:Text" />
+        <widget id="groupName" inputName="groupName" xsi:type="definition:Text" />
+        <widget id="destinationName" inputName="destinationName" xsi:type="definition:Text" />
+        <widget id="destinationData" inputName="destinationData" xsi:type="definition:Array" cols="2" fixedCols="true">
+            <colsCaption>Parameter name</colsCaption>
+            <colsCaption>Parameter value</colsCaption>
+        </widget>
+    </page>
+
+    <page id="functionDefinition">
+        <widget id="functionName" inputName="functionName" xsi:type="definition:Text" />
+        <widget id="commitOnSuccess" inputName="commitOnSuccess" xsi:type="definition:Checkbox" />
+        <widget id="rollbackOnFailure" inputName="rollbackOnFailure" xsi:type="definition:Checkbox" />
+    </page>
+
+    <page id="input">
+        <widget id="inputParameters" inputName="inputParameters" xsi:type="definition:Array" cols="4" fixedCols="true">
+            <colsCaption>Type</colsCaption>
+            <colsCaption>Table name</colsCaption>
+            <colsCaption>Parameter name</colsCaption>
+            <colsCaption>Parameter value</colsCaption>
+        </widget>
+    </page>
+
+    <page id="output">
+        <widget id="htmlOutput" inputName="htmlOutput" xsi:type="definition:Text" />
+        <widget id="outputParameters" inputName="outputParameters" xsi:type="definition:Array" cols="3" fixedCols="true">
+            <colsCaption>Type</colsCaption>
+            <colsCaption>Table name</colsCaption>
+            <colsCaption>XPath</colsCaption>
+        </widget>
+    </page>
+
+</definition:ConnectorDefinition>
