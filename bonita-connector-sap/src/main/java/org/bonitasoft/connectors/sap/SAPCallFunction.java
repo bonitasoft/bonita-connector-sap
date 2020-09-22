@@ -28,7 +28,7 @@ import org.bonitasoft.engine.connector.ConnectorValidationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.bonitasoft.engine.connector.sap.SAPMonoDestinationDataProvider;
+import com.bonitasoft.engine.connector.SAPMonoDestinationDataProvider;
 import com.sap.conn.jco.JCoContext;
 import com.sap.conn.jco.JCoDestination;
 import com.sap.conn.jco.JCoDestinationManager;

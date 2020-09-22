@@ -1,4 +1,4 @@
-package org.bonitasoft.engine.connector.sap;
+package com.bonitasoft.engine.connector;
 
 import java.util.Properties;
 
