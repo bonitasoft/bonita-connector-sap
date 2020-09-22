@@ -12,4 +12,6 @@ public interface JCoParameterList {
 
 	void setValue(String parameterName, Object parameterValue);
 
+    String toXML();
+
 }
