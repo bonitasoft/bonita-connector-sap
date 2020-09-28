@@ -6,7 +6,7 @@
 
 	<groupId>org.bonitasoft.connectors</groupId>
 	<artifactId>bonita-connector-sap</artifactId>
-	<version>2.0.1-SNAPSHOT</version>
+	<version>2.0.2-SNAPSHOT</version>
 
 	<name>SAP Connector</name>
 	<description>SAP JCO3 Call Function connector for Bonita</description>
