@@ -1,6 +1,6 @@
 package com.sap.conn.jco.ext;
 
-public class Environment {
+public abstract class Environment {
 
 	public static void unregisterDestinationDataProvider(DestinationDataProvider destinationProvider) {
 		
