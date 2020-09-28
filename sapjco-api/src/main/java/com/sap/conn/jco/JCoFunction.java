@@ -10,4 +10,6 @@ public interface JCoFunction {
 
 	JCoParameterList getImportParameterList();
 
+    String getName();
+
 }
