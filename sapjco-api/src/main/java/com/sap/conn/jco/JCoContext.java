@@ -1,7 +1,7 @@
 package com.sap.conn.jco;
 
 
-public class JCoContext {
+public abstract class JCoContext {
 
 	public static void begin(JCoDestination destination) {
 		

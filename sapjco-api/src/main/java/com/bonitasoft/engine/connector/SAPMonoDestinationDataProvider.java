@@ -9,14 +9,18 @@ import com.sap.conn.jco.ext.DestinationDataProvider;
  * Mock to remove when bonita-common 7.12 is available on public repo
  *
  */
-public interface SAPMonoDestinationDataProvider extends DestinationDataProvider {
+public class SAPMonoDestinationDataProvider implements DestinationDataProvider {
 
-	String getDestinationName();
+	public String getDestinationName() {
+	    return null;
+	}
 
-	static SAPMonoDestinationDataProvider getInstance(String destinationName) {
+	public static SAPMonoDestinationDataProvider getInstance(String destinationName) {
 		return null;
 	}
 
-	void changeProperties(Properties destinationProperties);
+	public void changeProperties(Properties destinationProperties) {
+	    
+	}
 
 }

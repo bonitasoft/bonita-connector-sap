@@ -85,6 +85,18 @@
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.bonitasoft.engine</groupId>
+				<artifactId>bonita-engine-sp</artifactId>
+				<version>7.12.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 		<dependency>
 			<artifactId>bonita-common</artifactId>
@@ -97,6 +109,10 @@
 			<artifactId>sapjco-api</artifactId>
 			<version>${project.version}</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+		 	<groupId>org.codehaus.groovy</groupId>
+   			 <artifactId>groovy-all</artifactId>
 		</dependency>
 
 		<!-- Tests -->
