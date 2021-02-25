@@ -62,7 +62,7 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
 		<groovy-maven-plugin.version>2.1.1</groovy-maven-plugin.version>
-		<groovy-all.version>2.4.16</groovy-all.version>
+		<groovy.version>3.0.7</groovy.version>
 		<maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 		<maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
@@ -192,8 +192,8 @@
 					<dependencies>
 						<dependency>
 							<groupId>org.codehaus.groovy</groupId>
-							<artifactId>groovy-all</artifactId>
-							<version>${groovy-all.version}</version>
+							<artifactId>groovy</artifactId>
+							<version>${groovy.version}</version>
 						</dependency>
 					</dependencies>
 				</plugin>
