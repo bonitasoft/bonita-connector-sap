@@ -100,6 +100,9 @@ public class SAPCallFunction extends AbstractConnector {
     public static final String OUTPUT_TABLE = "output_table";
     public static final String OUTPUT_STRUCTURE = "output_structure";
     public static final String OUTPUT_SINGLE = "output_single";
+    
+    
+    private static final String COMMIT_FUNCTION_NAME = "BAPI_TRANSACTION_COMMIT";
 
     static {
         INPUT_PARAMETER_TYPES.add(TABLE_INPUT);
@@ -147,6 +150,20 @@ public class SAPCallFunction extends AbstractConnector {
         } catch (JCoException e) {
             throw new ConnectorException("Failed to execute function", e);
         }
+        Boolean commitOnSuccess = (Boolean) getInputParameter(COMMIT_ON_SUCCESS, false);
+        if(commitOnSuccess) {
+            try {
+                commit();
+            } catch (JCoException e) {
+                throw new ConnectorException("Failed to commit the transaction.", e);
+            }
+        }
+    }
+    
+    private void commit() throws JCoException {
+        JCoFunction commitFunction = destination.getRepository().getFunction(COMMIT_FUNCTION_NAME);
+        commitFunction.getImportParameterList().setValue("WAIT", "X");
+        commitFunction.execute(destination);
     }
 
     private List<Serializable> fillBonitaResultWithJCOCallResult(final JCoParameterList tableParameterList) {
