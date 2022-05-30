@@ -38,7 +38,7 @@
 
 	<properties>
 		<!-- Maven -->
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.build.timestamp.format>yyyy.MM.dd-hh.mm</maven.build.timestamp.format>
@@ -57,27 +57,26 @@
 		<sapjco.version>3.0.3</sapjco.version>
 
 		<!-- Maven plugins -->
-		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-		<maven.compiler.source>${java.version}</maven.compiler.source>
-		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+		<maven.compiler.release>${java.version}</maven.compiler.release>
 		<maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
 		<groovy-maven-plugin.version>2.1.1</groovy-maven-plugin.version>
-		<groovy.version>3.0.7</groovy.version>
-		<maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
-		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+		<groovy.version>3.0.10</groovy.version>
+		<maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
+		<nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
 		<maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
 		<maven-source-plugin.version>3.2.0</maven-source-plugin.version>
-		<license-maven-plugin.version>4.0.rc2</license-maven-plugin.version>
+		<license-maven-plugin.version>4.1</license-maven-plugin.version>
+        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
 
 		<!-- Test -->
-		<junit-jupiter-engine.version>5.6.2</junit-jupiter-engine.version>
-		<junit-platform-runner.version>1.6.2</junit-platform-runner.version>
+		<junit-jupiter-engine.version>5.8.2</junit-jupiter-engine.version>
 		<wiremock.version>2.26.3</wiremock.version>
-		<assertj-core.version>3.16.1</assertj-core.version>
+		<assertj-core.version>3.22.0</assertj-core.version>
 		<mockito-core.version>3.3.3</mockito-core.version>
-		<logback-classic.version>1.2.3</logback-classic.version>
-		<jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
-		<sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
+		<logback-classic.version>1.2.11</logback-classic.version>
+		<jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
+		<sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
 
 		<!-- Sonar -->
 		<sonar.projectKey>bonitasoft_bonita-connector-sap</sonar.projectKey>
@@ -104,12 +103,6 @@
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
 			<version>${junit-jupiter-engine.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-runner</artifactId>
-			<version>${junit-platform-runner.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -201,18 +194,6 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>${maven-surefire-plugin.version}</version>
-					<configuration>
-						<enableAssertions>true</enableAssertions>
-						<forkCount>1</forkCount>
-						<reuseForks>true</reuseForks>
-					</configuration>
-					<dependencies>
-						<dependency>
-							<groupId>org.junit.platform</groupId>
-							<artifactId>junit-platform-runner</artifactId>
-							<version>${junit-platform-runner.version}</version>
-						</dependency>
-					</dependencies>
 				</plugin>
 				<plugin>
 					<groupId>org.jacoco</groupId>
@@ -338,7 +319,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.6</version>
+						<version>${maven-gpg-plugin.version}</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
