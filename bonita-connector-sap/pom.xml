@@ -44,7 +44,7 @@
 		<maven.build.timestamp.format>yyyy.MM.dd-hh.mm</maven.build.timestamp.format>
 
 		<!-- Bonita version -->
-		<bonita.engine.version>7.11.0</bonita.engine.version>
+		<bonita.engine.version>7.12.1</bonita.engine.version>
 
 		<!--Connector -->
 		<sap-jco3.def.id>sap-jco3-callfunction</sap-jco3.def.id>
