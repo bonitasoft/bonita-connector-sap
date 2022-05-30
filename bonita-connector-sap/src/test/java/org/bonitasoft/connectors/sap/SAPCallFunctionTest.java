@@ -17,7 +17,8 @@
  */
 package org.bonitasoft.connectors.sap;
 
-import static org.junit.Assert.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +26,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.junit.jupiter.api.Test;
+
 import com.sap.conn.jco.ext.DestinationDataProvider;
 
 class SAPCallFunctionTest {
