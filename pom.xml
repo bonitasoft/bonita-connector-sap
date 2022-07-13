@@ -6,7 +6,7 @@
 
 	<groupId>org.bonitasoft.connectors</groupId>
 	<artifactId>bonita-connector-sap-parent</artifactId>
-	<version>2.0.3-SNAPSHOT</version>
+	<version>2.0.3</version>
 	<packaging>pom</packaging>
 
 	<properties>
