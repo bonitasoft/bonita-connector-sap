@@ -1,6 +1,6 @@
 package com.sap.conn.jco;
 
-public interface JCoTable {
+public interface JCoTable extends JCoRecord {
 
 	boolean isEmpty();
 
@@ -8,7 +8,7 @@ public interface JCoTable {
 
 	boolean isLastRow();
 
-	void nextRow();
+	boolean nextRow();
 
 	int getNumRows();
 

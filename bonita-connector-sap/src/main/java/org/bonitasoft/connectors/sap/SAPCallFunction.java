@@ -25,10 +25,10 @@ import java.util.Properties;
 import org.bonitasoft.engine.connector.AbstractConnector;
 import org.bonitasoft.engine.connector.ConnectorException;
 import org.bonitasoft.engine.connector.ConnectorValidationException;
+import org.bonitasoft.engine.connector.sap.SAPMonoDestinationDataProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.bonitasoft.engine.connector.SAPMonoDestinationDataProvider;
 import com.sap.conn.jco.JCoContext;
 import com.sap.conn.jco.JCoDestination;
 import com.sap.conn.jco.JCoDestinationManager;
@@ -39,7 +39,6 @@ import com.sap.conn.jco.JCoRepository;
 import com.sap.conn.jco.JCoStructure;
 import com.sap.conn.jco.JCoTable;
 import com.sap.conn.jco.ext.DestinationDataProvider;
-import com.sap.conn.jco.ext.Environment;
 
 /**
  * BE CAREFUL: only one destinationName is possible
@@ -432,8 +431,6 @@ public class SAPCallFunction extends AbstractConnector {
         if (LOGGER.isDebugEnabled()) {
             LOGGER.debug("SAP JCO DestinationDataProvider properties updated.");
         }
-        Environment.unregisterDestinationDataProvider(destinationProvider);
-        Environment.registerDestinationDataProvider(destinationProvider);
 
         final JCoDestination destination = retrieveJCODestination(destinationName);
         if (LOGGER.isDebugEnabled()) {
