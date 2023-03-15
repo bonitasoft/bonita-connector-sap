@@ -74,7 +74,7 @@
 		<wiremock.version>2.26.3</wiremock.version>
 		<assertj-core.version>3.24.2</assertj-core.version>
 		<mockito-core.version>4.9.0</mockito-core.version>
-		<logback-classic.version>1.2.11</logback-classic.version>
+		<logback-classic.version>1.4.6</logback-classic.version>
 		<jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
 		<sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
 
