@@ -76,7 +76,7 @@
 		<mockito-core.version>5.7.0</mockito-core.version>
 		<logback-classic.version>1.2.13</logback-classic.version>
 		<jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
-		<sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+		<sonar-maven-plugin.version>3.10.0.2594</sonar-maven-plugin.version>
 
 		<!-- Sonar -->
 		<sonar.projectKey>bonitasoft_bonita-connector-sap</sonar.projectKey>
