@@ -18,6 +18,8 @@ In order to create a new release:
 - Run the action 'Create release', set the version to release as parameter
 - Update the `master` with the next SNAPSHOT version.
 
+For detailed information about publishing to Maven Central, see [maven-publish.md](maven-publish.md).
+
 ## Contributing
 
 We would love you to contribute, pull requests are welcome! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
