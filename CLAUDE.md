@@ -4,10 +4,10 @@
 
 - **Name**: Bonita SAP Connector
 - **Artifact**: `org.bonitasoft.connectors:bonita-connector-sap-parent` (multi-module)
-- **Version**: 2.0.4-SNAPSHOT
+- **Version**: 3.0.0-SNAPSHOT
 - **Description**: Bonita connector that calls SAP BAPI/RFC functions via SAP Java Connector (JCo 3). Supports Application Server and Message Server connection types, structured input/output table parameters, and optional BAPI transaction commit.
 - **License**: GPL-2.0
-- **Tech stack**: Java 11, Maven (multi-module), Bonita Engine 7.14.0, SAP JCo 3 (`sapjco3.jar` — proprietary, not in Maven Central), JUnit 5, Mockito, AssertJ, Logback
+- **Tech stack**: Java 17, Maven (multi-module), Bonita runtime 12.0+ (`bonita-runtime-bom`; Bonita 7.11 - 11.x use the 2.x versions), SAP JCo 3 (`sapjco3.jar` — proprietary, not in Maven Central), JUnit 5, Mockito, AssertJ, Logback
 
 ### Modules
 
